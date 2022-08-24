@@ -1,35 +1,30 @@
 [
   {
-<<<<<<< HEAD
     "id": 1,
     "name": "비 트리플 씨 페이셜 벨런싱 젤",
     "size": "60mL",
-    "count": 2,
+    "quantity": 2,
     "price": 580000
   },
   {
     "id": 2,
     "name": "휠 오드 퍼품",
     "size": "50mL",
-    "count": 1,
+    "quantity": 1,
     "price": 145000
   },
   {
     "id": 3,
     "name": "레퍼런스 아로마틱 핸드 밤",
     "size": "75mL",
-    "count": 1,
+    "quantity": 1,
     "price": 31000
   },
   {
     "id": 4,
     "name": "제라늄 리프 바디 스크럽",
     "size": "180mL",
-    "count": 1,
+    "quantity": 1,
     "price": 43000
-=======
-    "id": "10",
-    "sign": "회원가입"
->>>>>>> master
   }
 ]

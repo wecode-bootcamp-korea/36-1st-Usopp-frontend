@@ -2,25 +2,36 @@ import { useEffect, useState } from 'react';
 import Product from './Product/Product';
 import './Cart.scss';
 
-const Cart = () => {
+const Cart = ({ toggleCart }) => {
   const [productData, setProductData] = useState([]);
+
   let totalSumPrice = 0;
 
-  const deletedList = e =>
+  const deletedList = e => {
     setProductData(productData =>
       productData.filter(({ product_id }) => product_id !== Number(e.target.id))
     );
+    fetch('http://10.58.0.218:8000/carts', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+      body: Number(e.target.id),
+    });
+  };
 
   const goToPay = () =>
-    fetch(' https://518f-211-106-114-186.jp.ngrok.io/cart/2 ', {
+    fetch(' http://518f-211-106-114-186.jp.ngrok.io/cart/2 ', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        userId: 2,
+        userId: productData,
       }),
-    }).then(response => console.log(response.json()));
+    }).then(response => response.json());
 
   const productList = productData.map((product, idx) => {
     totalSumPrice += product.price * product.quantity;
@@ -37,11 +48,11 @@ const Cart = () => {
   });
 
   useEffect(() => {
-    fetch(' https://518f-211-106-114-186.jp.ngrok.io/cart/2 ', {
-      method: 'POST',
+    fetch('http://10.58.0.218:8000/carts', {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: '',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(response => response.json())
@@ -51,7 +62,7 @@ const Cart = () => {
   return (
     <div className="cart">
       {productList.length === 0 ? (
-        <div className="empty">
+        <div className="empty" onMouseLeave={toggleCart}>
           <p className="emptyP">카트가 비어있습니다.</p>
         </div>
       ) : (
@@ -60,7 +71,7 @@ const Cart = () => {
             <div className="titleArea">카트</div>
             <div className="sizeArea">사이즈</div>
             <div className="countArea">수량</div>
-            <i className="fi fi-br-cross" />
+            <i className="fi fi-br-cross" onClick={toggleCart} />
           </div>
           {productList}
           <div className="cartUnder">

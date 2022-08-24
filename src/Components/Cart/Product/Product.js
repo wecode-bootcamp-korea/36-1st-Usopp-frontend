@@ -32,7 +32,7 @@ const Product = ({
 
   return (
     <div className="productLocation">
-      <p className="titleArea">{product_id}</p>
+      <p className="titleArea">{name}</p>
       <p className="sizeArea productArea">{size}</p>
       <div
         className="countArea btnLocation"
@@ -42,7 +42,7 @@ const Product = ({
         {showCount ? (
           <>
             <button className="quantity" type="number" onClick={showCountList}>
-              <p className="btnCount">{name}</p>
+              <p className="btnCount">{quantity}</p>
               <i className="fi fi-rr-angle-small-down" />
             </button>
             {showBtn && (

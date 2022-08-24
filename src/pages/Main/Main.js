@@ -35,8 +35,6 @@ const Main = () => {
 
   return (
     <div>
-      <div className="gnb">상단 GNB 영역</div>
-
       <div className="main">
         <h2 className="title">향수</h2>
         <nav className="lnb">

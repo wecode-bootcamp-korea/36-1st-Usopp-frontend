@@ -1,89 +1,95 @@
 //  메인이랑 합칠 시 모달이 띄워 줄 때  적용되어야하는 코드
-body {
-  background-color: rgba(0, 0, 0, 0.4);
-}
 
-.modal {
+.modalWindow {
   position: fixed;
-  top: 60px;
-  left: 50%;
   width: 100%;
-  max-width: 550px;
-  height: auto;
-  margin: 0 auto;
-  margin-left: -275px;
-  padding: 50px;
-  color: rgba(0, 0, 0, 0.4);
-  background-color: #fffef2;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
 
-  .iconPositon {
-    position: relative;
+  .modal {
+    z-index: 20;
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+    margin-left: -275px;
+    padding: 50px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: #fffef2;
 
-    .modalTop {
-      padding-bottom: 30px;
+    .iconPositon {
+      position: relative;
 
-      .modalTitle {
-        padding-top: 40px;
-        padding-bottom: 10px;
-        color: black;
-        font-size: 42px;
-      }
-    }
+      .modalTop {
+        padding-bottom: 30px;
 
-    .modalSub {
-      color: #666;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .nameInput {
-      display: flex;
-      justify-content: space-around;
-
-      input {
-        width: 200px;
-        height: 40px;
-        margin-top: 30px;
-        margin-bottom: 40px;
-        padding: 8px 0;
-        background-color: transparent;
-        border: solid rgba(51, 51, 51, 0.2);
-        border-width: 0 0 1px;
-        line-height: 1;
-      }
-    }
-
-    .terms {
-      .checkBox {
-        font-weight: 550;
-      }
-    }
-
-    .btn {
-      width: 100%;
-      height: 60px;
-      margin: 25px 0 0;
-      background-color: #333;
-      border: none;
-      cursor: pointer;
-
-      &.btn:disabled {
-        cursor: default;
+        .modalTitle {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          color: black;
+          font-size: 42px;
+        }
       }
 
-      span {
-        color: #fffef2;
+      .modalSub {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.7;
       }
-    }
-    .under {
-      padding-top: 10px;
-      text-align: center;
-      cursor: pointer;
-    }
-    .fi {
-      position: absolute;
-      top: 0;
-      right: 0;
+
+      .nameInput {
+        display: flex;
+        justify-content: space-around;
+
+        input {
+          width: 200px;
+          height: 40px;
+          margin-top: 30px;
+          margin-bottom: 40px;
+          padding: 8px 0;
+          background-color: transparent;
+          border: solid rgba(51, 51, 51, 0.2);
+          border-width: 0 0 1px;
+          line-height: 1;
+        }
+      }
+
+      .terms {
+        .checkBox {
+          font-weight: 550;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        height: 60px;
+        margin: 25px 0 0;
+        background-color: #333;
+        border: none;
+        cursor: pointer;
+
+        &.btn:disabled {
+          cursor: default;
+        }
+
+        span {
+          color: #fffef2;
+        }
+      }
+      .under {
+        padding-top: 10px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .fi {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
     }
   }
 }

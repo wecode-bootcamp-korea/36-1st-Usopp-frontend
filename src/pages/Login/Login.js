@@ -3,7 +3,7 @@ import SignUp from './SignMode/SignUp';
 import SignIn from './SignMode/SignIn';
 import './Login.scss';
 
-const Login = () => {
+const Login = ({ toglleCart }) => {
   const [signMode, setSignMode] = useState('sign');
   const [inputValue, setInputValue] = useState({
     email: '',
@@ -158,18 +158,20 @@ const Login = () => {
   };
 
   return (
-    <div className="modal">
-      <div className="iconPositon">
-        <form method="get">
-          <div className="modalTop">
-            <h2 className="modalTitle">안녕하세요.</h2>
-            <div className="modalSub">
-              로그인 및 회원가입을 위한 이메일 주소를 입력 부탁드립니다.
+    <div className="modalWindow">
+      <div className="modal">
+        <div className="iconPositon">
+          <form method="get">
+            <div className="modalTop">
+              <h2 className="modalTitle">안녕하세요.</h2>
+              <div className="modalSub">
+                로그인 및 회원가입을 위한 이메일 주소를 입력 부탁드립니다.
+              </div>
             </div>
-          </div>
-          {showSign[signMode]}
-        </form>
-        <i className="fi fi-br-cross" />
+            {showSign[signMode]}
+          </form>
+          <i className="fi fi-br-cross" onClick={toglleCart} />
+        </div>
       </div>
     </div>
   );
