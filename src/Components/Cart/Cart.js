@@ -60,7 +60,7 @@ const Cart = ({ toggleCart }) => {
   }, []);
 
   return (
-    <div className="cart">
+    <div className="cart" onMouseLeave={toggleCart}>
       {productList.length === 0 ? (
         <div className="empty" onMouseLeave={toggleCart}>
           <p className="emptyP">카트가 비어있습니다.</p>
